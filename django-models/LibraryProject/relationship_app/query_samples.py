@@ -1,4 +1,5 @@
-author = Author.objects.get(name='Emmanuel')
+author_name = 'Emmanuel'
+author = Author.objects.get(name=author_name)
 books = Book.objects.filter(author=author)
 
 
