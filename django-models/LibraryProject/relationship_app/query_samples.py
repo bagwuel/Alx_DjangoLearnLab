@@ -1,7 +1,7 @@
 author = Author.objects.get(name='Emmanuel')
 books = author.book_set.all()
 
-library = Library.objects.get(name='mylibrary')
+library = Library.objects.get(name='library_name')
 books = library.book.all()
 
 library = Library.objects.get(name='mylibrary')
