@@ -12,11 +12,36 @@ from django.contrib.auth.decorators import login_required
 def profile(request):
 
     return render(request, "relationship_app/profile.html")
-
+'''
 class RegisterView(CreateView):
     form_class = UserCreationForm
     template_name = "relationship_app/register.html"
     success_url = reverse_lazy("login")
+'''
+
+def register(request):
+
+    if request.method == "POST":
+
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+
+            form.save()
+
+            return redirect("login")
+
+    else:
+        form = UserCreationForm()
+
+    return render(
+        request,
+        "relationship_app/register.html",
+        {
+            "form": form
+        }
+    )
+
 
 def books(request):
     books = Book.objects.all()
