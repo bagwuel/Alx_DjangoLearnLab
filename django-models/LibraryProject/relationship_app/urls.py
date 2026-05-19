@@ -15,5 +15,8 @@ urlpatterns = [
         path(
             "libraries/<int:pk>", views.LibraryDetails.as_view(), name="library_details"
             ),
+        path('admin-view/', views.admin_view, name='admin-view'),
+        path('librarian-view/', views.librarian_view, name='librarian-view'),
+        path('member-view/', views.member_view, name='member-view'),
 
 ]
